@@ -4,11 +4,12 @@ terragrunt = {
   # Configure Terragrunt to automatically store tfstate files in an S3 bucket
   remote_state {
     backend = "s3"
+
     config {
-      encrypt = true
-      bucket = "terragrunt-example-prod-terraform-state"
-      key = "${path_relative_to_include()}/terraform.tfstate"
-      region = "us-west-2"
+      encrypt    = true
+      bucket     = "terragrunt-example-prod-terraform-state"
+      key        = "${path_relative_to_include()}/terraform.tfstate"
+      region     = "us-west-2"
       lock_table = "terraform-locks"
     }
   }

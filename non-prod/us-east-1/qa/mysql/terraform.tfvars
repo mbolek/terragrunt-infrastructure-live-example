@@ -8,7 +8,7 @@ terragrunt = {
   # Terragrunt will copy the Terraform configurations specified by the source parameter, along with any files in the
   # working directory, into a temporary folder, and execute your Terraform commands in that folder.
   terraform {
-    source = "git::git@github.com:gruntwork-io/terragrunt-infrastructure-modules-example.git//mysql?ref=v0.0.1"
+    source = "github.com/gruntwork-io/terragrunt-infrastructure-modules-example.git//mysql?ref=v0.0.1"
   }
 
   # Include all settings from the root terraform.tfvars file
@@ -24,11 +24,15 @@ terragrunt = {
 
 aws_region = "us-east-1"
 
-name           = "mysql_qa"
+name = "mysql_qa"
+
 instance_class = "db.t2.micro"
 
 allocated_storage = 20
-storage_type      = "standard"
+
+storage_type = "standard"
 
 master_username = "admin"
+
 # TODO: To avoid storing your DB password in the code, set it as the environment variable TF_VAR_master_password
+

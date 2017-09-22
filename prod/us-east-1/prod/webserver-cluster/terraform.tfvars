@@ -8,7 +8,7 @@ terragrunt = {
   # Terragrunt will copy the Terraform configurations specified by the source parameter, along with any files in the
   # working directory, into a temporary folder, and execute your Terraform commands in that folder.
   terraform {
-    source = "git::git@github.com:gruntwork-io/terragrunt-infrastructure-modules-example.git//asg-elb-service?ref=v0.0.1"
+    source = "github.com/gruntwork-io/terragrunt-infrastructure-modules-example.git//asg-elb-service?ref=v0.0.1"
   }
 
   # Include all settings from the root terraform.tfvars file
@@ -24,11 +24,14 @@ terragrunt = {
 
 aws_region = "us-east-1"
 
-name          = "webserver-example-prod"
+name = "webserver-example-prod"
+
 instance_type = "t2.medium"
 
 min_size = 3
+
 max_size = 3
 
 server_port = 8080
-elb_port    = 80
+
+elb_port = 80
